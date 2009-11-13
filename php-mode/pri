@@ -1,0 +1,8 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : pri ...(...)
+#group : definitions
+# --
+private function ${1:name}(${2:$args})
+{
+   $0
+}

@@ -1,0 +1,7 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : if (...) {...}
+#group : control structure
+# --
+if (${1:condition}) {
+   $0
+}

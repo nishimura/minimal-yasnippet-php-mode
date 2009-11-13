@@ -1,0 +1,8 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : f ...(...)
+#group : definitions
+# --
+function ${1:name}(${2:$args})
+{
+   $0
+}

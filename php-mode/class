@@ -1,0 +1,11 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : class ... 
+#group : definitions
+# --
+class ${1:class_name}
+{
+   public function __construct()
+   {
+      $0
+   }
+}

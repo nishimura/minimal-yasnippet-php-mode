@@ -1,0 +1,9 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : switch (...) {...}
+#group : control structure
+# --
+switch (${1:true}) {
+case $2:
+    $0
+default:
+}
