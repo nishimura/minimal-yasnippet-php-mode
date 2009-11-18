@@ -1,5 +1,5 @@
 #contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : <?php /* ... */ class XXX{...} 
+#name : <?php /* ... */ class ...{...} 
 #group : definitions
 # --
 <?php
@@ -20,9 +20,20 @@
  * @copyright Copyright (c) $6 $7
  * @license    http://opensource.org/licenses/bsd-license.php The BSD License
  */
-class ${8:class_name}
+class ${8:`(replace-regexp-in-string
+ "^_+" ""
+ (mapconcat
+  #'identity
+  (split-string
+   ((lambda (a)
+      (substring a (let ((case-fold-search nil))
+                     (string-match "\\\\(/[A-Z][a-z0-9]+\\\\)+$" a )
+                     ))
+      )
+    (file-name-sans-extension (buffer-file-name))
+    ) "/") "_"))`}
 {
-   public function __construct()
+   public function ${9:__construct}()
    {
       $0
    }

@@ -2,7 +2,18 @@
 #name : class ... 
 #group : definitions
 # --
-class ${1:class_name}
+class ${1:`(replace-regexp-in-string
+ "^_+" ""
+ (mapconcat
+  #'identity
+  (split-string
+   ((lambda (a)
+      (substring a (let ((case-fold-search nil))
+                     (string-match "\\\\(/[A-Z][a-z0-9]+\\\\)+$" a )
+                     ))
+      )
+    (file-name-sans-extension (buffer-file-name))
+    ) "/") "_"))`}
 {
    public function __construct()
    {
