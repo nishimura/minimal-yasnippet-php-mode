@@ -1,0 +1,9 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : try { ... } catch ( ... ){ ... }
+#group : control structure
+# --
+try {
+  $1
+} catch (${2:Exception} ${3:$e}){
+  $0
+}
