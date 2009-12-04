@@ -11,14 +11,12 @@
  * @package   ${3:package}
  * @author    ${4:author} <${5:email}>
  * @copyright Copyright (c) ${6:`(format-time-string "%Y" (current-time))`} ${7:copyright}
- * @license    http://opensource.org/licenses/bsd-license.php The BSD License
  */
 
 /**
  * @package $3
  * @author  $4 <$5>
  * @copyright Copyright (c) $6 $7
- * @license    http://opensource.org/licenses/bsd-license.php The BSD License
  */
 class ${8:`(replace-regexp-in-string
  "^_+" ""
