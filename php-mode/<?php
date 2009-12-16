@@ -6,19 +6,19 @@
 /**
  * ${1:file_title}
  *
- * ${2:description}
- *
- * @package   ${3:package}
- * @author    ${4:author} <${5:email}>
- * @copyright Copyright (c) ${6:`(format-time-string "%Y" (current-time))`} ${7:copyright}
+ * @package   ${2:package}
+ * @author    ${3:author} <${4:email}>
+ * @copyright Copyright (c) ${5:`(format-time-string "%Y" (current-time))`} ${6:copyright}
  */
 
 /**
  * $1
  *
- * @package $3
- * @author  $4 <$5>
- * @copyright Copyright (c) $6 $7
+ * ${7:description}
+ *
+ * @package $2
+ * @author  $3 <$4>
+ * @copyright Copyright (c) $5 $6
  */
 class ${8:`(replace-regexp-in-string
  "^_+" ""
