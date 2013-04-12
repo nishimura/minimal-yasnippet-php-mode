@@ -1,0 +1,52 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : <?php53 /* ... */ class ...{...} 
+#group : definitions
+# --
+<?php
+/**
+ * ${1:file_title}
+ *
+ * @package   ${2:package}
+ * @author    ${3:author} <${4:email}>
+ * @copyright Copyright (c) ${5:`(format-time-string "%Y" (current-time))`} ${6:copyright}
+ */
+
+namespace ${7:`(replace-regexp-in-string
+ "^\\\\\\\\+" ""
+ (mapconcat
+  #'identity
+  (reverse (nthcdr 1 (reverse (split-string
+   ((lambda (a)
+      (substring a (let ((case-fold-search nil))
+                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     ))
+      )
+    (file-name-sans-extension (buffer-file-name))
+    ) "/")))) "\\\\"))`};
+
+/**
+ * $1
+ *
+ * ${8:description}
+ *
+ * @package $2
+ * @author  $3 <$4>
+ * @copyright Copyright (c) $5 $6
+ */
+class ${9:`(replace-regexp-in-string
+ "^_+" ""
+ (car (last
+  (split-string
+   ((lambda (a)
+      (substring a (let ((case-fold-search nil))
+                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     ))
+      )
+    (file-name-sans-extension (buffer-file-name))
+    ) "/"))))`}
+{
+   public function ${10:__construct}($11})
+   {
+      $0
+   }
+}
