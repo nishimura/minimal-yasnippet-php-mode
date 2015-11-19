@@ -9,7 +9,7 @@
  * 
  * @author ${3:`(save-excursion
  (beginning-of-buffer)
- (if (re-search-forward "@author \\\\(.*\\\\)$" nil t)
+ (if (re-search-forward "@author \\(.*\\)$" nil t)
      (setq match-string
        (buffer-substring-no-properties
          (match-beginning 1) (match-end 1))) "author <email>"))`}

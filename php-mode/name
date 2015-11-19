@@ -1,19 +1,19 @@
 #contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : <?php53 /* ... */ class ...{...} 
+#name : namespace ... class ...{...}
 #group : definitions
 # --
 namespace ${1:`(replace-regexp-in-string
- "^\\\\\\\\+" ""
+ "^\\\\+" ""
  (mapconcat
   #'identity
   (reverse (nthcdr 1 (reverse (split-string
    ((lambda (a)
       (substring a (let ((case-fold-search nil))
-                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     (string-match "\\(/[A-Z][a-zA-Z0-9]+\\)+$" a )
                      ))
       )
     (file-name-sans-extension (buffer-file-name))
-    ) "/")))) "\\\\"))`};
+    ) "/")))) "\\"))`};
 
 class ${2:`(replace-regexp-in-string
  "^_+" ""
@@ -21,7 +21,7 @@ class ${2:`(replace-regexp-in-string
   (split-string
    ((lambda (a)
       (substring a (let ((case-fold-search nil))
-                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     (string-match "\\(/[A-Z][a-zA-Z0-9]+\\)+$" a )
                      ))
       )
     (file-name-sans-extension (buffer-file-name))

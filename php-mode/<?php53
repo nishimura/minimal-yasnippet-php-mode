@@ -12,17 +12,17 @@
  */
 
 namespace ${7:`(replace-regexp-in-string
- "^\\\\\\\\+" ""
+ "^\\\\+" ""
  (mapconcat
   #'identity
   (reverse (nthcdr 1 (reverse (split-string
    ((lambda (a)
       (substring a (let ((case-fold-search nil))
-                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     (string-match "\\(/[A-Z][a-zA-Z0-9]+\\)+$" a )
                      ))
       )
     (file-name-sans-extension (buffer-file-name))
-    ) "/")))) "\\\\"))`};
+    ) "/")))) "\\"))`};
 
 /**
  * $1
@@ -39,13 +39,13 @@ class ${9:`(replace-regexp-in-string
   (split-string
    ((lambda (a)
       (substring a (let ((case-fold-search nil))
-                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     (string-match "\\(/[A-Z][a-zA-Z0-9]+\\)+$" a )
                      ))
       )
     (file-name-sans-extension (buffer-file-name))
     ) "/"))))`}
 {
-   public function ${10:__construct}($11})
+   public function ${10:__construct}($11)
    {
       $0
    }
